@@ -1,0 +1,20 @@
+Open A Terminal TO Run Backend
+>cd AI_BACKEND
+>python -m venv venv
+>.\venv\Scripts\activate
+>pip install -r requirements.txt
+>python -m uvicorn app.main:app --reload
+
+Open Another Terminal for frontend
+
+>cd FrontEnd
+>npm install
+>npm run dev
+
+For Database
+
+->install postgresql
+->CREATE ai_summarizer_db
+->in AI_BACKEND/.env replace my password by yours
+->DATABASE_URL=postgresql://postgres:Your_Password@localhost/ai_summarizer_db
+->note:- if you have @ in your password use %40 ex:- karthik%4064 instaed of karthik@64
