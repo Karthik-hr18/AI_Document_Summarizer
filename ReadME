@@ -1,0 +1,5 @@
+#TO Run Backend
+>cd AI_BACKEND
+>.\venv\Scripts\activate
+>pip install -r requirements.txt
+>python -m uvicorn app.main:app --reload
