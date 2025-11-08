@@ -15,3 +15,4 @@ MODEL_CACHE_DIR=./model_cache
 >.\venv\Scripts\activate
 >pip install -r requirements.txt
 >python -m uvicorn app.main:app --reload
+Note:- please Add the requirements file from main file to Backend
