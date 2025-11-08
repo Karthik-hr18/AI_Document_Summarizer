@@ -1,0 +1,36 @@
+# === AI_BACKEND GITIGNORE ===
+
+# --- Python / FastAPI ---
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+*.env
+venv/
+env/
+.idea/
+.DS_Store
+.mypy_cache/
+pytest_cache/
+
+# --- Hugging Face & ML ---
+model_cache/
+datasets/
+uploads/
+*.pkl
+*.pt
+*.bin
+*.h5
+*.ckpt
+*.joblib
+*.sav
+
+# --- VSCode / Editors ---
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+
+# --- OS / Build Artifacts ---
+*.bak
+*.tmp
