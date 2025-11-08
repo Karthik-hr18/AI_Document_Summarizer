@@ -28,6 +28,18 @@ AI_BACKEND/*.ckpt
 AI_BACKEND/*.joblib
 AI_BACKEND/*.sav
 
+# --- Backend Heavy Files (prevent large repo) ---
+AI_BACKEND/venv/
+AI_BACKEND/__pycache__/
+AI_BACKEND/model_cache/
+AI_BACKEND/datasets/
+AI_BACKEND/uploads/
+AI_BACKEND/*.pkl
+AI_BACKEND/*.pt
+AI_BACKEND/*.bin
+AI_BACKEND/*.h5
+AI_BACKEND/*.ckpt
+
 # --- Node.js / React / Frontend ---
 node_modules/
 build/
@@ -49,3 +61,4 @@ Thumbs.db
 # --- OS / Build Artifacts ---
 *.bak
 *.tmp
+*.cache
