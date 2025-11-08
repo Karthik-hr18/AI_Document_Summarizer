@@ -1,0 +1,17 @@
+#TO Run Backend
+>cd AI_BACKEND
+Create .env file 
+DATABASE_URL=postgresql://postgres:Karthik%4064@localhost/ai_summarizer_db
+SECRET_KEY=your_super_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+# AI Summarizer Settings
+HUGGINGFACE_MODEL=facebook/bart-large-cnn
+MODEL_CACHE_DIR=./model_cache
+SUMMARIZATION_MAX_LENGTH=200
+SUMMARIZATION_MIN_LENGTH=30
+MODEL_CACHE_DIR=./model_cache
+>python -m venv venv
+>.\venv\Scripts\activate
+>pip install -r requirements.txt
+>python -m uvicorn app.main:app --reload
