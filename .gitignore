@@ -1,4 +1,5 @@
-# === AI_BACKEND GITIGNORE ===
+# === PROJECT WIDE GITIGNORE ===
+# Combines Backend (FastAPI) + Frontend (React/Vite)
 
 # --- Python / FastAPI ---
 __pycache__/
@@ -13,19 +14,33 @@ env/
 .mypy_cache/
 pytest_cache/
 
-# --- Hugging Face & ML ---
-model_cache/
-datasets/
-uploads/
-*.pkl
-*.pt
-*.bin
-*.h5
-*.ckpt
-*.joblib
-*.sav
+# --- Hugging Face & ML (Backend) ---
+AI_BACKEND/model_cache/
+AI_BACKEND/datasets/
+AI_BACKEND/uploads/
+AI_BACKEND/venv/
+AI_BACKEND/__pycache__/
+AI_BACKEND/*.pkl
+AI_BACKEND/*.pt
+AI_BACKEND/*.bin
+AI_BACKEND/*.h5
+AI_BACKEND/*.ckpt
+AI_BACKEND/*.joblib
+AI_BACKEND/*.sav
 
-# --- VSCode / Editors ---
+# --- Node.js / React / Frontend ---
+node_modules/
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env.local
+.env.development
+.env.production
+coverage/
+
+# --- System / Editor Files ---
 .vscode/
 *.swp
 *.swo
