@@ -1,7 +1,7 @@
 #TO Run Backend
 >cd AI_BACKEND
 Create .env file 
-DATABASE_URL=postgresql://postgres:Karthik%4064@localhost/ai_summarizer_db
+DATABASE_URL=postgresql://postgres:Your Password@localhost/ai_summarizer_db
 SECRET_KEY=your_super_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
@@ -15,4 +15,4 @@ MODEL_CACHE_DIR=./model_cache
 >.\venv\Scripts\activate
 >pip install -r requirements.txt
 >python -m uvicorn app.main:app --reload
-Note:- please Add the requirements file from main file to Backend
+
