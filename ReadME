@@ -1,5 +1,7 @@
 
+
 ---
+
 # **AI Document Summarizer**
 
 An end-to-end full-stack application that allows users to upload documents (PDF, TXT, DOCX), automatically summarize them using AI models, and manage authentication (login/register) through a secure backend.
@@ -56,8 +58,8 @@ AI_DOCUMENT_SUMMARIZER
 │   │   ├── utils.py
 │   │   ├── main.py
 │   │   └── exceptions.py
-│   ├── uploads/           # saved uploaded files
-│   ├── model_cache/       # cached AI models
+│   ├── uploads/
+│   ├── model_cache/
 │   ├── requirements.txt
 │   └── Dockerfile
 │
@@ -81,16 +83,16 @@ AI_DOCUMENT_SUMMARIZER
 * Uvicorn
 * SQLAlchemy
 * JWT Authentication
-* Python Summarization Model (Huggingface / custom)
+* HuggingFace Summarization Model
 
 ### **Database**
 
-* PostgreSQL 
+* PostgreSQL
 
 ### **Deployment**
 
 * Docker
-* Docker Compose 
+* Docker Compose
 
 ---
 
@@ -148,10 +150,10 @@ uvicorn app.main:app --reload
 ```
 
 Backend runs at:
-👉 **[http://localhost:8000](http://localhost:8000)**
+👉 [http://localhost:8000](http://localhost:8000)
 
-Open API Docs:
-📘 **[http://localhost:8000/docs](http://localhost:8000/docs)**
+Docs:
+📘 [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
@@ -163,11 +165,10 @@ Create a `.env` file inside the **Backend** folder:
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
-
-DATABASE_URL=sqlite:///./database.db
+DATABASE_URL=postgresql://postgres:password@localhost/ai_summarizer_db
 ```
 
-For Frontend, create `.env`:
+Frontend `.env`:
 
 ```
 VITE_API_URL=http://localhost:8000
@@ -179,32 +180,31 @@ VITE_API_URL=http://localhost:8000
 
 ### **Auth**
 
-| Method | Endpoint         | Description           |
-| ------ | ---------------- | --------------------- |
-| POST   | `/auth/register` | Register new user     |
-| POST   | `/auth/login`    | Login + get JWT token |
+| Method | Endpoint       | Description           |
+| ------ | -------------- | --------------------- |
+| POST   | /auth/register | Register new user     |
+| POST   | /auth/login    | Login + get JWT token |
 
-### **Document Handling**
+### **Document**
 
-| Method | Endpoint     | Description                 |
-| ------ | ------------ | --------------------------- |
-| POST   | `/upload`    | Upload document             |
-| POST   | `/summarize` | Get AI summary              |
-| GET    | `/history`   | Get past uploads (optional) |
+| Method | Endpoint   | Description             |
+| ------ | ---------- | ----------------------- |
+| POST   | /upload    | Upload document         |
+| POST   | /summarize | Get AI summary          |
+| GET    | /history   | Get user’s past uploads |
 
 ---
 
 ## 🐳 **Run with Docker**
 
-Inside **Backend** folder:
-
-### Build:
+### Build
 
 ```bash
+cd Backend
 docker build -t ai-summarizer-backend .
 ```
 
-### Run:
+### Run
 
 ```bash
 docker run -p 8000:8000 ai-summarizer-backend
@@ -212,45 +212,32 @@ docker run -p 8000:8000 ai-summarizer-backend
 
 ---
 
-## 🎯 **How It Works**
-
-1. User logs in or registers
-2. Uploads a document (PDF/TXT/DOCX)
-3. Backend extracts text
-4. AI model generates summary
-5. Result displayed on UI
-
----
-
-## 📷 **Screenshots (Optional)**
-
----
+## 📸 **Screenshots**
 
 ```html
 <h2>📸 Screenshots</h2>
 
 <h3>Login Page</h3>
-<img src="./screenshots/login_page.png" alt="Login Page" width="600"/>
+<img src="./screenshots/login_page.png" width="600"/>
 
 <h3>Register Page</h3>
-<img src="./screenshots/register_page.png" alt="Register Page" width="600"/>
+<img src="./screenshots/register_page.png" width="600"/>
 
 <h3>Upload Document Page</h3>
-<img src="./screenshots/upload_page.png" alt="Upload Page" width="600"/>
+<img src="./screenshots/upload_page.png" width="600"/>
 
 <h3>Summary Result</h3>
-<img src="./screenshots/summary_result.png" alt="Summary Result" width="600"/>
+<img src="./screenshots/summary_result.png" width="600"/>
 
 <h3>Project Structure</h3>
-<img src="./screenshots/project_structure.png" alt="Project Structure" width="600"/>
+<img src="./screenshots/project_structure.png" width="600"/>
 ```
-
 
 ---
 
 ## 🤝 **Contributing**
 
-Feel free to submit issues or pull requests!
+PRs and issues are welcome.
 
 ---
 
@@ -259,6 +246,4 @@ Feel free to submit issues or pull requests!
 If you like this project, give it a ⭐ on GitHub!
 
 ---
-
-
 
