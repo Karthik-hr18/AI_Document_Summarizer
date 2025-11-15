@@ -1,45 +1,33 @@
-Here is a **clean, fully fixed, perfectly rendering, ready-made README.md**.
-**Just copy–paste it exactly as it is.**
-No conflict markers, no formatting issues, no broken HTML blocks.
 
 ---
 
 # **AI Document Summarizer**
 
-An end-to-end full-stack application that allows users to upload documents (PDF, TXT, DOCX), automatically summarize them using AI models, and manage authentication (login/register) through a secure backend.
-This project contains a **React + Vite frontend** and a **FastAPI backend**, with optional Docker support.
+An end-to-end full-stack application that allows users to upload documents (PDF, TXT, DOCX), automatically summarize them using AI models, and manage authentication through a secure backend. This project includes a **React + Vite frontend** and a **FastAPI backend**.
 
 ---
 
-## 🚀 **Features**
+## 🚀 Features
 
-* 🔐 User Authentication (Register/Login)
-* 📄 Upload documents (PDF, TXT, DOCX)
-* 🤖 AI-powered text summarization
-* 🏦 Document processing history (optional)
-* 📡 REST API built with FastAPI
-* 🎨 Modern UI with React, TailwindCSS, and Vite
-* 🐳 Docker support for easy deployment
+* User Authentication (Login / Register)
+* Upload documents (PDF, TXT, DOCX)
+* AI-powered text summarization
+* REST API (FastAPI)
+* Modern UI (React + TailwindCSS)
+* Docker support
 
 ---
 
-## 🧱 **Project Architecture**
+## 🧱 Project Structure
 
 ```
 AI_DOCUMENT_SUMMARIZER
 │
-├── FrontEnd/     # React + Vite UI
+├── FrontEnd/
 │   ├── src/
 │   │   ├── assets/
 │   │   ├── components/
-│   │   │   ├── ui/
-│   │   │   │   ├── AuthRoute.jsx
-│   │   │   │   └── PrivateRouter.jsx
-│   │   │   └── UIComponents.jsx
 │   │   ├── pages/
-│   │   │   ├── LoginPage.jsx
-│   │   │   ├── RegisterPage.jsx
-│   │   │   └── UploadPage.jsx
 │   │   ├── App.jsx
 │   │   ├── main.jsx
 │   │   └── index.css
@@ -47,19 +35,8 @@ AI_DOCUMENT_SUMMARIZER
 │   ├── vite.config.js
 │   └── tailwind.config.js
 │
-├── Backend/       # FastAPI backend
+├── Backend/
 │   ├── app/
-│   │   ├── auth/
-│   │   ├── routers/
-│   │   ├── services/
-│   │   ├── config.py
-│   │   ├── database.py
-│   │   ├── crud.py
-│   │   ├── models.py
-│   │   ├── schemas.py
-│   │   ├── utils.py
-│   │   ├── main.py
-│   │   └── exceptions.py
 │   ├── uploads/
 │   ├── model_cache/
 │   ├── requirements.txt
@@ -70,39 +47,35 @@ AI_DOCUMENT_SUMMARIZER
 
 ---
 
-## 🛠 **Tech Stack**
+## 🛠 Tech Stack
 
-### **Frontend**
+### Frontend
 
-* React + Vite
+* React
+* Vite
 * TailwindCSS
 * Axios
-* React Router
 
-### **Backend**
+### Backend
 
 * FastAPI
-* Uvicorn
 * SQLAlchemy
-* JWT Authentication
-* HuggingFace Summarization Model
+* JWT Auth
+* HuggingFace Model
 
-### **Database**
+### Database
 
 * PostgreSQL
 
-### **Deployment**
+### Deployment
 
 * Docker
-* Docker Compose
 
 ---
 
-## ⚙️ **Installation & Setup**
+## ⚙️ Installation
 
----
-
-## **1️⃣ Clone the Repository**
+### Clone the Repo
 
 ```bash
 git clone https://github.com/Karthik-hr18/AI_DOCUMENT_SUMMARIZER.git
@@ -111,57 +84,35 @@ cd AI_DOCUMENT_SUMMARIZER
 
 ---
 
-# 🖥️ **Frontend Setup**
-
-### 1. Install dependencies
+# 🖥️ Frontend Setup
 
 ```bash
 cd FrontEnd
 npm install
-```
-
-### 2. Start the development server
-
-```bash
 npm run dev
 ```
 
 ---
 
-# 🐍 **Backend Setup (FastAPI)**
-
-### 1. Create a virtual environment
+# 🐍 Backend Setup
 
 ```bash
 cd Backend
 python -m venv venv
-source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
-```
-
-### 2. Install backend dependencies
-
-```bash
+source venv/bin/activate   # Mac/Linux
 pip install -r requirements.txt
-```
-
-### 3. Run the FastAPI server
-
-```bash
 uvicorn app.main:app --reload
 ```
 
-Backend runs at:
-👉 [http://localhost:8000](http://localhost:8000)
-
-Docs:
-📘 [http://localhost:8000/docs](http://localhost:8000/docs)
+Backend runs at: [http://localhost:8000](http://localhost:8000)
+Docs: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-## 🔑 **Environment Variables**
+## 🔑 Environment Variables
 
-Create a `.env` file inside the **Backend** folder:
+Create `Backend/.env`:
 
 ```
 SECRET_KEY=your_secret_key
@@ -170,7 +121,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
 DATABASE_URL=postgresql://postgres:password@localhost/ai_summarizer_db
 ```
 
-Frontend `.env`:
+Create `FrontEnd/.env`:
 
 ```
 VITE_API_URL=http://localhost:8000
@@ -178,45 +129,32 @@ VITE_API_URL=http://localhost:8000
 
 ---
 
-## 📡 **API Endpoints (FastAPI)**
+## 📡 API Endpoints
 
-### **Auth**
+### Auth
 
-| Method | Endpoint       | Description           |
-| ------ | -------------- | --------------------- |
-| POST   | /auth/register | Register new user     |
-| POST   | /auth/login    | Login + get JWT token |
+POST /auth/register
+POST /auth/login
 
-### **Document**
+### Documents
 
-| Method | Endpoint   | Description             |
-| ------ | ---------- | ----------------------- |
-| POST   | /upload    | Upload document         |
-| POST   | /summarize | Get AI summary          |
-| GET    | /history   | Get user’s past uploads |
+POST /upload
+POST /summarize
+GET /history
 
 ---
 
-## 🐳 **Run with Docker**
-
-### Build
+## 🐳 Docker (Backend)
 
 ```bash
 cd Backend
 docker build -t ai-summarizer-backend .
-```
-
-### Run
-
-```bash
 docker run -p 8000:8000 ai-summarizer-backend
 ```
 
 ---
 
-## 📸 **Screenshots**
-
-<h2>📸 Screenshots</h2>
+## 📸 Screenshots
 
 <h3>Login Page</h3>
 <img src="./screenshots/login_page.png" width="600"/>
@@ -224,7 +162,7 @@ docker run -p 8000:8000 ai-summarizer-backend
 <h3>Register Page</h3>
 <img src="./screenshots/register_page.png" width="600"/>
 
-<h3>Upload Document Page</h3>
+<h3>Upload Page</h3>
 <img src="./screenshots/upload_page.png" width="600"/>
 
 <h3>Summary Result</h3>
@@ -233,29 +171,17 @@ docker run -p 8000:8000 ai-summarizer-backend
 <h3>Project Structure</h3>
 <img src="./screenshots/project_structure.png" width="600"/>
 
-
 ---
 
-## 🤝 **Contributing**
+## 🤝 Contributing
 
 PRs and issues are welcome.
 
 ---
 
-## ⭐ **Support**
+## ⭐ Support
 
 If you like this project, give it a ⭐ on GitHub!
 
 ---
 
-### ✅ Done
-
-This version **will render correctly**, including all HTML screenshot tags.
-
-If you'd like, I can also generate:
-
-* a badge-enhanced README
-* a minimal version
-* a professional portfolio-style version
-
-Just tell me!
