@@ -1,5 +1,5 @@
 
-
+---
 # **AI Document Summarizer**
 
 An end-to-end full-stack application that allows users to upload documents (PDF, TXT, DOCX), automatically summarize them using AI models, and manage authentication (login/register) through a secure backend.
