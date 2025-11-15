@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #TO Run Backend
 >cd AI_BACKEND
 Create .env file 
@@ -15,4 +16,275 @@ MODEL_CACHE_DIR=./model_cache
 >.\venv\Scripts\activate
 >pip install -r requirements.txt
 >python -m uvicorn app.main:app --reload
+=======
+Here is a **ready-to-use, copy-paste README.md** for your **AI Document Summarizer** project based on the structure you provided.
+It includes: project intro, features, architecture, folder structure, tech stack, installation, environment variables, running locally, API endpoints, and Docker instructions.
+
+---
+
+# **AI Document Summarizer**
+
+An end-to-end full-stack application that allows users to upload documents (PDF, TXT, DOCX), automatically summarize them using AI models, and manage authentication (login/register) through a secure backend.
+This project contains a **React + Vite frontend** and a **FastAPI backend**, with optional Docker support.
+
+---
+
+## 🚀 **Features**
+
+* 🔐 User Authentication (Register/Login)
+* 📄 Upload documents (PDF, TXT, DOCX)
+* 🤖 AI-powered text summarization
+* 🏦 Document processing history (optional)
+* 📡 REST API built with FastAPI
+* 🎨 Modern UI with React, TailwindCSS, and Vite
+* 🐳 Docker support for easy deployment
+
+---
+
+## 🧱 **Project Architecture**
+
+```
+AI_DOCUMENT_SUMMARIZER
+│
+├── FrontEnd/     # React + Vite UI
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   │   ├── ui/
+│   │   │   │   ├── AuthRoute.jsx
+│   │   │   │   └── PrivateRouter.jsx
+│   │   │   └── UIComponents.jsx
+│   │   ├── pages/
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── RegisterPage.jsx
+│   │   │   └── UploadPage.jsx
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   ├── vite.config.js
+│   └── tailwind.config.js
+│
+├── Backend/       # FastAPI backend
+│   ├── app/
+│   │   ├── auth/
+│   │   ├── routers/
+│   │   ├── services/
+│   │   ├── config.py
+│   │   ├── database.py
+│   │   ├── crud.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   ├── utils.py
+│   │   ├── main.py
+│   │   └── exceptions.py
+│   ├── uploads/           # saved uploaded files
+│   ├── model_cache/       # cached AI models
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+└── README.md
+```
+
+---
+
+## 🛠 **Tech Stack**
+
+### **Frontend**
+
+* React + Vite
+* TailwindCSS
+* Axios
+* React Router
+
+### **Backend**
+
+* FastAPI
+* Uvicorn
+* SQLAlchemy
+* JWT Authentication
+* Python Summarization Model (Huggingface / custom)
+
+### **Database**
+
+* SQLite/MySQL/PostgreSQL (depending on your config)
+
+### **Deployment**
+
+* Docker
+* Docker Compose (optional)
+
+---
+
+## ⚙️ **Installation & Setup**
+
+---
+
+## **1️⃣ Clone the Repository**
+
+```bash
+git clone https://github.com/your-username/AI_DOCUMENT_SUMMARIZER.git
+cd AI_DOCUMENT_SUMMARIZER
+```
+
+---
+
+# 🖥️ **Frontend Setup**
+
+### 1. Install dependencies
+
+```bash
+cd FrontEnd
+npm install
+```
+
+### 2. Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🐍 **Backend Setup (FastAPI)**
+
+### 1. Create a virtual environment
+
+```bash
+cd Backend
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+```
+
+### 2. Install backend dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the FastAPI server
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Backend runs at:
+👉 **[http://localhost:8000](http://localhost:8000)**
+
+Open API Docs:
+📘 **[http://localhost:8000/docs](http://localhost:8000/docs)**
+
+---
+
+## 🔑 **Environment Variables**
+
+Create a `.env` file inside the **Backend** folder:
+
+```
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+DATABASE_URL=sqlite:///./database.db
+```
+
+For Frontend, create `.env`:
+
+```
+VITE_API_URL=http://localhost:8000
+```
+
+---
+
+## 📡 **API Endpoints (FastAPI)**
+
+### **Auth**
+
+| Method | Endpoint         | Description           |
+| ------ | ---------------- | --------------------- |
+| POST   | `/auth/register` | Register new user     |
+| POST   | `/auth/login`    | Login + get JWT token |
+
+### **Document Handling**
+
+| Method | Endpoint     | Description                 |
+| ------ | ------------ | --------------------------- |
+| POST   | `/upload`    | Upload document             |
+| POST   | `/summarize` | Get AI summary              |
+| GET    | `/history`   | Get past uploads (optional) |
+
+---
+
+## 🐳 **Run with Docker**
+
+Inside **Backend** folder:
+
+### Build:
+
+```bash
+docker build -t ai-summarizer-backend .
+```
+
+### Run:
+
+```bash
+docker run -p 8000:8000 ai-summarizer-backend
+```
+
+---
+
+## 🎯 **How It Works**
+
+1. User logs in or registers
+2. Uploads a document (PDF/TXT/DOCX)
+3. Backend extracts text
+4. AI model generates summary
+5. Result displayed on UI
+
+---
+
+## 📷 **Screenshots (Optional)**
+
+Here is a **copy-paste HTML-based screenshot section** you can put directly into your README.md.
+
+---
+
+## 📸 Screenshots (HTML Format)
+
+```html
+<h2>📸 Screenshots</h2>
+
+<h3>Login Page</h3>
+<img src="./screenshots/login_page.png" alt="Login Page" width="600"/>
+
+<h3>Register Page</h3>
+<img src="./screenshots/register_page.png" alt="Register Page" width="600"/>
+
+<h3>Upload Document Page</h3>
+<img src="./screenshots/upload_page.png" alt="Upload Page" width="600"/>
+
+<h3>Summary Result</h3>
+<img src="./screenshots/summary_result.png" alt="Summary Result" width="600"/>
+
+<h3>Project Structure</h3>
+<img src="./screenshots/project_structure.png" alt="Project Structure" width="600"/>
+```
+
+
+---
+
+## 🤝 **Contributing**
+
+Feel free to submit issues or pull requests!
+
+---
+
+## ⭐ **Support**
+
+If you like this project, give it a ⭐ on GitHub!
+
+---
+
+>>>>>>> ac3388d (Updated ReadMe)
 
