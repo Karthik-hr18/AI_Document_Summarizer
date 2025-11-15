@@ -1,26 +1,4 @@
-<<<<<<< HEAD
-#TO Run Backend
->cd AI_BACKEND
-Create .env file 
-DATABASE_URL=postgresql://postgres:Your Password@localhost/ai_summarizer_db
-SECRET_KEY=your_super_secret_key
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-# AI Summarizer Settings
-HUGGINGFACE_MODEL=facebook/bart-large-cnn
-MODEL_CACHE_DIR=./model_cache
-SUMMARIZATION_MAX_LENGTH=200
-SUMMARIZATION_MIN_LENGTH=30
-MODEL_CACHE_DIR=./model_cache
->python -m venv venv
->.\venv\Scripts\activate
->pip install -r requirements.txt
->python -m uvicorn app.main:app --reload
-=======
-Here is a **ready-to-use, copy-paste README.md** for your **AI Document Summarizer** project based on the structure you provided.
-It includes: project intro, features, architecture, folder structure, tech stack, installation, environment variables, running locally, API endpoints, and Docker instructions.
 
----
 
 # **AI Document Summarizer**
 
@@ -107,12 +85,12 @@ AI_DOCUMENT_SUMMARIZER
 
 ### **Database**
 
-* SQLite/MySQL/PostgreSQL (depending on your config)
+* PostgreSQL 
 
 ### **Deployment**
 
 * Docker
-* Docker Compose (optional)
+* Docker Compose 
 
 ---
 
@@ -123,7 +101,7 @@ AI_DOCUMENT_SUMMARIZER
 ## **1️⃣ Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/AI_DOCUMENT_SUMMARIZER.git
+git clone https://github.com/Karthik-hr18/AI_DOCUMENT_SUMMARIZER.git
 cd AI_DOCUMENT_SUMMARIZER
 ```
 
@@ -246,11 +224,7 @@ docker run -p 8000:8000 ai-summarizer-backend
 
 ## 📷 **Screenshots (Optional)**
 
-Here is a **copy-paste HTML-based screenshot section** you can put directly into your README.md.
-
 ---
-
-## 📸 Screenshots (HTML Format)
 
 ```html
 <h2>📸 Screenshots</h2>
@@ -286,5 +260,5 @@ If you like this project, give it a ⭐ on GitHub!
 
 ---
 
->>>>>>> ac3388d (Updated ReadMe)
+
 
