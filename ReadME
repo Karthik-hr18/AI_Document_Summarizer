@@ -216,7 +216,6 @@ docker run -p 8000:8000 ai-summarizer-backend
 
 ## 📸 **Screenshots**
 
-```html
 <h2>📸 Screenshots</h2>
 
 <h3>Login Page</h3>
@@ -233,7 +232,7 @@ docker run -p 8000:8000 ai-summarizer-backend
 
 <h3>Project Structure</h3>
 <img src="./screenshots/project_structure.png" width="600"/>
-```
+
 
 ---
 
